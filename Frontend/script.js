@@ -10,7 +10,7 @@ document
     formData.append("email", email);
     formData.append("image", image);
 
-    fetch("http://localhost:1337/home/", {
+    fetch("http://localhost:1337/v1/home/", {
       method: "POST",
       body: formData,
     })
