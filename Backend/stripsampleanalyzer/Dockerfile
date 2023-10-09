@@ -13,3 +13,6 @@ COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
 
 # Add code for working with entrypoint file
+
+
+COPY . /usr/src/app/
