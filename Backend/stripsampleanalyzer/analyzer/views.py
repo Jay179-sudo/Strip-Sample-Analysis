@@ -9,7 +9,10 @@ class AnalyzerView(APIView):
     def post(self, request, format=None):
         serializer = AnalyzerSerializer(data=request.data)
         if serializer.is_valid():
-            create_task.delay(email=request.data.get("email"),image=request.data.get("image").read())
+            try:
+                create_task.delay(email=request.data.get("email"),image=request.data.get("image").read())
+            except:
+                return Response( {"msg": "Request unsuccessful. Internal Server Error."}, status=status.HTTP_400_BAD_REQUEST)
             return    Response({"msg": "Request successful!"}, status=status.HTTP_201_CREATED, )
         return Response(
-            {"msg": "Request unsuccessful"}, status=status.HTTP_400_BAD_REQUEST)
+            {"msg": "Request unsuccessful. Invalid data"}, status=status.HTTP_400_BAD_REQUEST)

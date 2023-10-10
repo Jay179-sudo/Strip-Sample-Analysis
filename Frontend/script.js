@@ -19,7 +19,16 @@ document
       })
       .then(function (data) {
         console.log(data);
-        // Handle the response from the server as needed
+        var resultMessage = data.msg;
+        var resultDiv = document.getElementById("resultMessage");
+        if (!resultDiv) {
+          resultDiv = document.createElement("div");
+          resultDiv.id = "resultMessage";
+          document.body.appendChild(resultDiv);
+        }
+        resultDiv.innerHTML = resultMessage;
+
+        document.getElementById("submitForm").reset();
       })
       .catch(function (error) {
         console.error("Error:", error);
