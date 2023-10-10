@@ -70,5 +70,32 @@ Open index.html
     
 ## Usage and Examples
 
-Fill in after frontend revamp
+Home Page
 
+The home page welcomes you to the application. Here, you can input an email to deliver the test results to and select the image for analysis. 
+
+![Home Page](./Images/HomePage.png)
+
+Image Upload
+
+An example of the filled form.
+
+![Image Upload](./Images/UploadImage.png)
+
+Successful Request
+
+State of the application once a successful request is made.
+
+![Successful Request](Images/ReqSuccessful.png)
+
+Email Result 
+
+An example of the result delivered via email. 
+
+![Email Result](Images/EmailResult.png)
+
+Invalid Data input
+
+Example of an invalid data input
+
+![Invalid Format](Images/InvalidFormat.png)
